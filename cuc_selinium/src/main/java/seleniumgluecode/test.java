@@ -24,7 +24,7 @@ public class test {
     }
 	
     
-    @When("^user navigates to Login Page$")
+	@When("^user navigates to Login Page$")
     public void user_navigates_to_Login_Page() throws Throwable {
         driver.findElement(By.linkText("Sign in")).click();
     }
