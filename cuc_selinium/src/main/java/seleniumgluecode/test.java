@@ -16,8 +16,8 @@ public class test {
 	@Given("^user is  on homepage$")
 	public void user_is_on_homepage() throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
-		System.setProperty("webdriver.chrome.driver","C:\\chromedriver_win32\\chromedriver.exe");
-        driver = new ChromeDriver();
+		System.setProperty("webdriver.chrome.driver","sourcefiles/chromedriver.exe");
+		driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("http://automationpractice.com/index.php");
     }
