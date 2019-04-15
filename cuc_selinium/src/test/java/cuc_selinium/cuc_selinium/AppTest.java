@@ -1,38 +1,23 @@
 package cuc_selinium.cuc_selinium;
+import java.io.File;
+import org.junit.*;
+import org.junit.AfterClass;
+import org.junit.runner.RunWith;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import com.cucumber.listener.ExtentCucumberFormatter;
+import com.cucumber.listener.Reporter;
 
-/**
- * Unit test for simple App.
- */
-public class AppTest 
-    extends TestCase
+import cucumber.api.CucumberOptions;
+import cucumber.api.junit.Cucumber;
+
+@RunWith(Cucumber.class)
+@CucumberOptions(glue= {"seleniumgluecode"},features = "src/main/java/Features",plugin = { "com.cucumber.listener.ExtentCucumberFormatter:target/cucumber-reports/report.html"},
+monochrome = true)
+public class AppTest
 {
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName )
-    {
-        super( testName );
-    }
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( AppTest.class );
-    }
-
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
-    }
+	@AfterClass
+    public static void writeExtentReport() {
+	Reporter.loadXMLConfig(new File("src/test/java/config/configur.xml"));
+	}
 }
