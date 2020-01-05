@@ -1,4 +1,4 @@
-# automationlogin
+# A small cucumber-selenium-Maven-Git project to check basic login functionalities of 2 different websites.
 
 1. Basic Cucumber-Selenium-maven project.
 2. The login functionality of two websites is checked.
